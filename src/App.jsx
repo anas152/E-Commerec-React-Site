@@ -1,12 +1,10 @@
-import "./App.css";
-import { useState } from "react";
+import ProductCard from "./components/ProductCard";
 
 function App() {
-  const [num, setNum] = useState(0);
 
   return (
     <>
-
+    <ProductCard />
     </>
   );
 }

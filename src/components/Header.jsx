@@ -6,21 +6,32 @@ export default function Header() {
     <div className="h-[38] mt-10 flex items-center justify-between ">
       <div className="flex items-center">
         <img src={logo} alt="logo" />
-          <ul className=" pl-52 flex gap-3">
-            <li><a href="">Home</a></li>
-            <li><a href="/About.jsx">About US </a></li>
-            <li><a href="">Contact</a></li>
-          </ul>
       </div>
-      <div className=" rounded h-[38] px-3 w-60 bg-[#F5F5F5] flex items-center justify-between ">
-        <input 
+      <div className=" rounded h-[38] px- w-60 bg-[#F5F5F5] flex items-center justify-between ">
+        <input
           type="search"
           placeholder="What are you looking for?"
           className="w-full bg-transparent outline-none"
         />
         <CiSearch />
       </div>
+      <ul className="font-bold pl-52 flex gap-5">
+        <li>
+          <a className="hover:underline font-bold" href="/">
+            Home
+          </a>
+        </li>
+        <li>
+          <a className="hover:underline font-bold" href="/About">
+            About US
+          </a>
+        </li>
+        <li>
+          <a className="hover:underline font-bold  " href="/Contact">
+            Contact
+          </a>
+        </li>
+      </ul>
     </div>
   );
 }
-

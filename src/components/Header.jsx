@@ -7,15 +7,18 @@ import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
 
-
-const links = ["Home", "About US", "Contact"];
+const links = [
+  { title: "Home", link: "/" },
+  { title: "About US ", link: "/About" },
+  { title: "Contact", link: "/Contact" },
+];
 const navlinkStyle =
   "capitalize hover:underline cursor-pointer hover:text-primary";
 export default function Header() {
   const isloggedIn = false;
-  const [isHamburgerOpen, setIsHamBurgerOpen] = useState(false)
+  const [isHamburgerOpen, setIsHamBurgerOpen] = useState(false);
   return (
-    <div className="h-[38] mt-10 flex items-center justify-between ">
+    <div className="  h-[38] mt-10 flex items-center justify-between ">
       <div className="flex items-center">
         <img src={logo} alt="logo" />
       </div>
@@ -27,18 +30,49 @@ export default function Header() {
         />
         <CiSearch />
       </div>
-      {/* <ul className="font-bold pl-52 flex gap-5 ">
+      <ul className="hidden md:flex font-bold gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
         {links.map((items, i) => (
           <li className={navlinkStyle} key={i}>
-            {" "}
-            {items}
+            <a href={items.link}>{items.title}</a>
           </li>
         ))}
-        {!isloggedIn ? <li className={navlinkStyle}>Login</li> : null}
-      </ul> */}
-      <button className="  md:hidden text-4xl order-3  " onClick={()=>setIsHamBurgerOpen(!isHamburgerOpen)}>
-    {isHamburgerOpen ? <MdOutlineCancel /> : <IoIosMenu />  }
+        {!isloggedIn && <li className={navlinkStyle}>Login</li>}
+      </ul>
+
+      <button
+        className="md:hidden text-3xl"
+        onClick={() => setIsHamBurgerOpen(!isHamburgerOpen)}
+      >
+        {isHamburgerOpen ? <MdOutlineCancel /> : <IoIosMenu />}
       </button>
+
+      {isHamburgerOpen && (
+        <ul className="absolute top-[4.5rem] left-0 w-full bg-gray-200 z-50 flex flex-col gap-4 p-4 shadow-lg">
+          {links.map((items, i) => (
+            <li className={`${navlinkStyle} text-lg`} key={i}>
+              <a href={items.link}>{items.title}</a>
+            </li>
+          ))}
+          {!isloggedIn && <li className={`${navlinkStyle} text-lg`}>Login</li>}
+        </ul>
+      )}
+      {isHamburgerOpen && (
+        <ul className="absolute top-16 left-0 w-full bg-white z-50 shadow-lg flex flex-col gap-4 p-6">
+          {links.map((items, i) => (
+            <li
+              className={`${navlinkStyle} text-lg flex items-center gap-2`}
+              key={i}
+            >
+              <a href={items.link}>{items.title}</a>
+            </li>
+          ))}
+          {!isloggedIn && (
+            <li className={`${navlinkStyle} text-lg flex items-center gap-2`}>
+              SignUp
+            </li>
+          )}
+        </ul>
+      )}
 
       <div className="icons center text-2xl gap-3">
         {isloggedIn ? (
@@ -48,16 +82,17 @@ export default function Header() {
           </>
         ) : null}
       </div>
-      <div className="rounded-full overflow-hidden text-white bg-primary w-8 h-8">
-      {isloggedIn ? (
-        <img
-        src="https://media.licdn.com/dms/image/v2/D5635AQHqT6pfvG8nHA/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1732688533700?e=1735545600&v=beta&t=UcJi2wcX6LDmVpDel_Okyx_20fp_ch_fFt7bLzWmD5c"
-        alt=""
-        />
-      ) : 
-      <LuUserRound className="  w-8 h-8" />
-    }
-    </div>
+      <div className="bg-primary rounded-full overflow-hidden h-8 w-8 center text-base text-white">
+        {isloggedIn ? (
+          <img
+            src="https://media.licdn.com/dms/image/v2/D5635AQHqT6pfvG8nHA/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1732688533700?e=1735545600&v=beta&t=UcJi2wcX6LDmVpDel_Okyx_20fp_ch_fFt7bLzWmD5c"
+            alt="Profile"
+            className="w-full h-full object-cover sm:w[38]"
+          />
+        ) : (
+          <LuUserRound className="w-6 h-6 md:w-8 md:h-8" />
+        )}
+      </div>
     </div>
   );
 }

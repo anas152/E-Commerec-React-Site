@@ -18,7 +18,7 @@ function App() {
     <div className="mr-[136px] ml-[136px]">
     <Header />
     <AboutUs />
-    <ProductCard />
+    {/* <ProductCard /> */}
     </div> 
     </>
   );

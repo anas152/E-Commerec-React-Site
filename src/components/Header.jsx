@@ -6,6 +6,7 @@ import { LuUserRound } from "react-icons/lu";
 import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
+import mobileLogo from "../assets/logo/logoMobile.svg"
 
 const links = [
   { title: "Home", link: "/" },
@@ -20,7 +21,8 @@ export default function Header() {
   return (
     <div className="  h-[38] mt-10 flex items-center justify-between ">
       <div className="flex items-center">
-        <img src={logo} alt="logo" />
+        <img className="mobile:hidden sm:hidden md:flex lg:flex xl:flex 2xl:flex" src={logo} alt="logo" />
+        <img className="mobile:flex sm:flex md:hidden lg:hidden xl:hidden 2xl:hidden" src={mobileLogo} alt="" />
       </div>
       <div className=" ml-16 rounded h-[38] px- w-60 bg-[#F5F5F5] flex items-center justify-between ">
         <input
@@ -30,7 +32,7 @@ export default function Header() {
         />
         <CiSearch />
       </div>
-      <ul className="hidden md:flex font-bold gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
+      <ul className="hidden md:flex  gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
         {links.map((items, i) => (
           <li className={navlinkStyle} key={i}>
             <a href={items.link}>{items.title}</a>
@@ -82,7 +84,7 @@ export default function Header() {
           </>
         ) : null}
       </div>
-      <div className="bg-primary rounded-full overflow-hidden h-8 w-8 center text-base text-white">
+      <div className=" mr-3 bg-primary rounded-full overflow-hidden h-8 w-8 center text-base text-white">
         {isloggedIn ? (
           <img
             src="https://media.licdn.com/dms/image/v2/D5635AQHqT6pfvG8nHA/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1732688533700?e=1735545600&v=beta&t=UcJi2wcX6LDmVpDel_Okyx_20fp_ch_fFt7bLzWmD5c"
@@ -90,7 +92,7 @@ export default function Header() {
             className="w-full h-full object-cover sm:w[38]"
           />
         ) : (
-          <LuUserRound className="w-6 h-6 md:w-8 md:h-8" />
+          <LuUserRound className="  w-6 h-6 md:w-8 md:h-8" />
         )}
       </div>
     </div>

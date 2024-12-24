@@ -11,15 +11,10 @@ function App() {
     {/* <div className=/" h-screen bg-red-500 md:bg-green-600">
 
     </div> */}
-
-
-
-    / <Banner/> 
-    <div className="mr-[136px] ml-[136px]">
+    <Banner/> 
     <Header />
     <AboutUs />
     {/* <ProductCard /> */}
-    </div> 
     </>
   );
 }

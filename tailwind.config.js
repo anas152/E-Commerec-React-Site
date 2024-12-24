@@ -8,6 +8,9 @@ export default {
     extend: {
       colors:{
         primary : "#DB4444"
+      },
+      screens:{
+        "mobile" : "315px",
       }
     },
   },

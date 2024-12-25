@@ -6,7 +6,7 @@ import { LuUserRound } from "react-icons/lu";
 import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
-import mobileLogo from "../assets/logo/logoMobile.svg"
+import mobileLogo from "../assets/logo/mobileLogo.svg";
 
 const links = [
   { title: "Home", link: "/" },
@@ -19,10 +19,23 @@ export default function Header() {
   const isloggedIn = false;
   const [isHamburgerOpen, setIsHamBurgerOpen] = useState(false);
   return (
-    <div className="  h-[38] mt-10 flex items-center justify-between ">
+    <div className=" md:px-[135px] w-full  flex items-center justify-between sticky  h-10 top-0 z-50  ">
       <div className="flex items-center">
-        <img className="mobile:hidden sm:hidden md:flex lg:flex xl:flex 2xl:flex" src={logo} alt="logo" />
-        <img className="mobile:flex sm:flex md:hidden lg:hidden xl:hidden 2xl:hidden" src={mobileLogo} alt="" />
+        <a href="">
+          {" "}
+          <img
+            className="mobile:hidden sm:hidden md:flex lg:flex xl:flex 2xl:flex"
+            src={logo}
+            alt="logo"
+          />{" "}
+        </a>
+        <a href="">
+          <img
+            className="mobile:flex sm:flex md:hidden lg:hidden xl:hidden 2xl:hidden  "
+            src={mobileLogo}
+            alt=""
+          />{" "}
+        </a>
       </div>
       <div className=" ml-16 rounded h-[38] px- w-60 bg-[#F5F5F5] flex items-center justify-between ">
         <input

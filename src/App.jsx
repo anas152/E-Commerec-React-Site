@@ -14,7 +14,7 @@ function App() {
     <Banner/> 
     <Header />
     <AboutUs />
-    {/* <ProductCard /> */}
+    {/* /* <ProductCard />  */}
     </>
   );
 }

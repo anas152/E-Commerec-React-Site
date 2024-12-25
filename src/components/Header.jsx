@@ -7,6 +7,7 @@ import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import mobileLogo from "../assets/logo/mobileLogo.svg";
+import { Link } from "react-router-dom";
 
 const links = [
   { title: "Home", link: "/" },
@@ -14,30 +15,31 @@ const links = [
   { title: "Contact", link: "/Contact" },
 ];
 const navlinkStyle =
-  "capitalize hover:underline cursor-pointer hover:text-primary";
+  "capitalize hover:underline transition duration-400 transition duration-300 cursor-pointer hover:text-primary";
 export default function Header() {
-  const isloggedIn = false;
+  const [isloggedIn, setIsLoggedIn] = useState(false);
+  // const isloggedIn = false;
   const [isHamburgerOpen, setIsHamBurgerOpen] = useState(false);
   return (
     <div className=" md:px-[135px] w-full  flex items-center justify-between sticky  h-10 top-0 z-50  ">
       <div className="flex items-center">
-        <a href="">
+        <Link to="/">
           {" "}
           <img
             className="mobile:hidden sm:hidden md:flex lg:flex xl:flex 2xl:flex"
             src={logo}
             alt="logo"
           />{" "}
-        </a>
-        <a href="">
+        </Link>
+        <Link to="">
           <img
             className="mobile:flex sm:flex md:hidden lg:hidden xl:hidden 2xl:hidden  "
             src={mobileLogo}
             alt=""
           />{" "}
-        </a>
+        </Link>
       </div>
-      <div className=" ml-16 rounded h-[38] px- w-60 bg-[#F5F5F5] flex items-center justify-between ">
+      <div className=" ml-16 rounded h-[38] w-60 bg-[#F5F5F5] flex items-center justify-between ">
         <input
           type="search"
           placeholder="What are you looking for?"
@@ -45,13 +47,16 @@ export default function Header() {
         />
         <CiSearch />
       </div>
-      <ul className="hidden md:flex  gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
+      <ul className=" hidden md:flex  gap-6 lg:gap-8 xl:gap-7 2xl:gap-12">
         {links.map((items, i) => (
           <li className={navlinkStyle} key={i}>
-            <a href={items.link}>{items.title}</a>
-          </li>
+      <Link to={items.link}>{items.title}</Link>
+      </li>
         ))}
-        {!isloggedIn && <li className={navlinkStyle}>Login</li>}
+          <li className={navlinkStyle}>
+    <Link to="/login">Login</Link> 
+  </li>
+        {/* {!isloggedIn && <li className={navlinkStyle}>Login</li>} */}
       </ul>
 
       <button
@@ -62,30 +67,19 @@ export default function Header() {
       </button>
 
       {isHamburgerOpen && (
-        <ul className="absolute top-[4.5rem] left-0 w-full bg-gray-200 z-50 flex flex-col gap-4 p-4 shadow-lg">
-          {links.map((items, i) => (
-            <li className={`${navlinkStyle} text-lg`} key={i}>
-              <a href={items.link}>{items.title}</a>
+        <ul className="absolute bg-gray-200 w-full z-10 gap-3 flex flex-col p-6 top-28">
+          {links.map((item, i) => (
+            <li className={navlinkStyle} key={i}>
+              <Link to={item.link}>{item.title}</Link>
+              {/* <Link to="/login">{item.title}</Link> */}
+
             </li>
           ))}
-          {!isloggedIn && <li className={`${navlinkStyle} text-lg`}>Login</li>}
-        </ul>
-      )}
-      {isHamburgerOpen && (
-        <ul className="absolute top-16 left-0 w-full bg-white z-50 shadow-lg flex flex-col gap-4 p-6">
-          {links.map((items, i) => (
-            <li
-              className={`${navlinkStyle} text-lg flex items-center gap-2`}
-              key={i}
-            >
-              <a href={items.link}>{items.title}</a>
+          {!isloggedIn ? (
+            <li className={navlinkStyle} text-lg flex items-center gap-2>
+              <Link to="/login">Login</Link>
             </li>
-          ))}
-          {!isloggedIn && (
-            <li className={`${navlinkStyle} text-lg flex items-center gap-2`}>
-              SignUp
-            </li>
-          )}
+          ) : null}
         </ul>
       )}
 

@@ -47,20 +47,22 @@ export default function Header() {
         />
         <CiSearch />
       </div>
-      <ul className=" hidden md:flex  gap-6 lg:gap-8 xl:gap-7 2xl:gap-12">
+      <ul className=" hidden md:hidden sm:hidden lg:flex xl:flex 2xl:flex gap-6 xl:gap-7 2xl:gap-12 lg:gap-4 ">
         {links.map((items, i) => (
           <li className={navlinkStyle} key={i}>
       <Link to={items.link}>{items.title}</Link>
       </li>
         ))}
           <li className={navlinkStyle}>
-    <Link to="/login">Login</Link> 
+            { !isloggedIn &&             
+              <Link to="/login">Login</Link>  
+            }
   </li>
         {/* {!isloggedIn && <li className={navlinkStyle}>Login</li>} */}
       </ul>
 
       <button
-        className="md:hidden text-3xl"
+        className="md:flex sm:flex lg:hidden text-3xl"
         onClick={() => setIsHamBurgerOpen(!isHamburgerOpen)}
       >
         {isHamburgerOpen ? <MdOutlineCancel /> : <IoIosMenu />}

@@ -5,10 +5,12 @@ import { Routes, Route, Link } from "react-router-dom";
 import AboutUs from "./Pages/About";
 import Home from "./Pages/home";
 import Contact from "./Pages/contact";
-import Login from "./pages/login";
-// import SingUp from "./Pages/singup"
+import Login from "./Pages/login";
+import SingUp from "./Pages/singup"
 
 function App() {
+  let logSing = false;
+
   return (
     <>
       <Banner />
@@ -18,7 +20,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />}/>
+        <Route path="/login" element={<Login />} />
+          {!logSing &&  (
+            <>
+            <Route path="/singup" element={<SingUp />} />
+          
+            </>
+          ) }
       </Routes>
     </>
   );

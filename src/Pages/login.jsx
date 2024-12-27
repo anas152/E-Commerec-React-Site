@@ -24,7 +24,7 @@ export default function login() {
           </h2>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-10 sm:mx-auto  sm:w-full sm:max-w-sm">
           <form action="#" method="POST" className="space-y-6">
             <div>
               <label
@@ -54,12 +54,12 @@ export default function login() {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a
+                  {/* <a
                     href="/SingUp"
                     className="font-semibold text-primary hover:text-red-400"
                   >
                     Forgot password?
-                  </a>
+                  </a> */}
                 </div>
               </div>
               <div className="mt-2">
@@ -83,11 +83,25 @@ export default function login() {
                 Sign in
               </Link>
             </div>
+           
           </form>
 
+          <div className="mt-4 flex ">
+              <h6 className="flex justify-between" >
+                Din't have account? {" "}
+              <Link
+                    to="/Singup"                  className=" text-primary hover:text-red-400"
+
+                  >
+                    Singup
+                  </Link>
+              </h6>
+            </div>
           
         </div>
+        
       </div>
+    
     </>
   );
 }

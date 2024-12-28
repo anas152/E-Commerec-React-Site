@@ -35,13 +35,14 @@ export default function login() {
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  autoComplete="email"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6"
-                />
+                  
+                   id="email"
+                   name="email"
+                   type="email"
+                   required
+                   autoComplete="email"
+                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6"
+                 />
               </div>
             </div>
 
@@ -75,33 +76,27 @@ export default function login() {
             </div>
 
             <div>
-              <Link 
-              to="/singUp"
+              <Link
+                to="/singUp"
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2  "
               >
                 Sign in
               </Link>
             </div>
-           
+            <div className="mt-4 flex ">
+            <h6 className="flex justify-between">
+              Din't have account?{" "}
+              <Link to="/Singup" className=" text-primary hover:text-red-400">
+                Singup
+              </Link>
+            </h6>
+          </div>
           </form>
 
-          <div className="mt-4 flex ">
-              <h6 className="flex justify-between" >
-                Din't have account? {" "}
-              <Link
-                    to="/Singup"                  className=" text-primary hover:text-red-400"
-
-                  >
-                    Singup
-                  </Link>
-              </h6>
-            </div>
-          
+  
         </div>
-        
       </div>
-    
     </>
   );
 }

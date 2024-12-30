@@ -3,10 +3,9 @@ import ContactImg from "../assets/Picture/24buy7.webp";
 
 export default function Contact() {
   return (
-    <div className="flex flex-col lg:flex-row mt-10 justify-center items-center lg:space-x-12 space-y-6 lg:space-y-0">
-      {/* Image Section */}
-      <div className="w-[600px] ">
-        <img src={ContactImg} alt="Contact Us" className="w-full rounded-lg shadow-lg" />
+<div className="flex flex-col lg:flex-row mt-10 justify-center items-center lg:space-x-12 space-y-6 lg:space-y-0">
+<div className="w-[600px]    ">
+        <img src={ContactImg} alt="Contact Us" className=" mobile:hidden sm:flex  sm:w-full rounded-lg shadow-lg" />
       </div>
 
       {/* Form Section */}

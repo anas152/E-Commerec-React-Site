@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import ProductCard from './ProductCard';
 
-
+    
 export default function Slider() {
   return (
     <Swiper

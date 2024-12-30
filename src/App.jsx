@@ -6,7 +6,7 @@ import Home from "./Pages/home";
 import Contact from "./Pages/contact";
 import Login from "./Pages/login";
 import SingUp from "./Pages/singup";
-import Slider from "./components/Slider"
+import Slider from "./components/Slider";
 import { Routes, Route, Outlet, Link, Navigate } from "react-router-dom";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
     <>
       <Banner />
       <Header />
-      <Slider />
+      {/* <Slider /> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,14 +29,17 @@ function App() {
               path="/profile"
               element={<div>this is my profile page</div>}
             />
-
-            <Route path="/login" element={<Navigate to="/" />} />
-            <Route path="*" element={<Navigate to="/not-found" />} />
+            <Route path="/singup" element={<SingUp />} />
+            <Route path="*" element={<Navigate to="/singup" />} />
+            {/* <Route path="/login" element={<Navigate to="/" />} />
+            <Route path="*" element={<Navigate to="/not-found" />} /> */}
           </>
         ) : (
           <>
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<Navigate to="/login" />} />
+            <Route path="/singup" element={<SingUp />} />
+            <Route path="*" element={<Navigate to="/singup" />} />
           </>
         )}
       </Routes>

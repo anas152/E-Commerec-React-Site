@@ -87,7 +87,7 @@ export default function login() {
             <div className="mt-4 flex ">
             <h6 className="flex justify-between">
               Din't have account?{" "}
-              <Link to="/Singup" className=" text-primary hover:text-red-400">
+              <Link to="/singup" className=" text-primary hover:text-red-400">
                 Singup
               </Link>
             </h6>

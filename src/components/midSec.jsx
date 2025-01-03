@@ -4,7 +4,7 @@ import midSecPic from "../assets/Picture/main-center-pic.png";
 
 export default function midSec() {
   return (
-    <div className=" flex  items-center lg:mx-[135px] justify-center md:mx-[135px] sm:mx-[135px ">
+    <div className=" flex  items-center container-x justify-center  ">
     {/* Left Section - Categories */}
     <div className="w-full md:w-[217px] flex mobile:hidden sm:hidden md:hidden lg:flex flex-col gap-4 p-4">
       <ul className="text-sm md:text-base font-medium">Woman’s Fashion</ul>

@@ -21,7 +21,7 @@ export default function Header() {
   // const isloggedIn = false;
   const [isHamburgerOpen, setIsHamBurgerOpen] = useState(false);
   return (
-    <div className=" md:px-[135px] w-full mb-4 flex items-center justify-between sticky  h-10 top-0 z-50  ">
+    <div className="  w-full flex items-center  container-x  justify-between sticky  h-10 top-0 z-50  ">
       <div className="flex items-center">
         <Link to="/">
           {" "}

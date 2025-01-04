@@ -1,12 +1,10 @@
 import Banner from "./components/Banner";
 import Header from "./components/Header";
-// import { Routes, Route, Link } from "react-router-dom";
 import AboutUs from "./Pages/About";
 import Home from "./Pages/home";
 import Contact from "./Pages/contact";
 import Login from "./Pages/login";
 import SingUp from "./Pages/singup";
-import Slider from "./components/Slider";
 import { Routes, Route, Outlet, Link, Navigate } from "react-router-dom";
 
 function App() {
@@ -16,7 +14,7 @@ function App() {
     <>
       <Banner />
       <Header />
-      {/* <Slider /> */}
+  
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -42,7 +40,9 @@ function App() {
             <Route path="*" element={<Navigate to="/singup" />} />
           </>
         )}
+        
       </Routes>
+
     </>
   );
 }

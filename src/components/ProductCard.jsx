@@ -21,8 +21,8 @@ function ProductCard() {
         <p>Stars</p>
       </div>
       </div>
-      
     </>
+  
   );
 }
 

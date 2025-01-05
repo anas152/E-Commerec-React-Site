@@ -1,7 +1,8 @@
-import ProductCard from "../components/ProductCard";
 import MidSec from "../components/midSec";
 import DayFlash from "../components/DayFlash";
 import Slider from "../components/Slider"
+import AllProductBtn from "../components/AllProductBtn";
+
 export default function home() {
   return (
     <>
@@ -9,6 +10,7 @@ export default function home() {
     <MidSec/>
     < DayFlash />
     <Slider />
+    < AllProductBtn/>
     </>
   );
 }
